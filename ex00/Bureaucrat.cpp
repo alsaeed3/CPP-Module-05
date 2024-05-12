@@ -6,18 +6,18 @@
 /*   By: alsaeed <alsaeed@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 20:52:14 by alsaeed           #+#    #+#             */
-/*   Updated: 2024/05/08 06:00:58 by alsaeed          ###   ########.fr       */
+/*   Updated: 2024/05/09 13:20:50 by alsaeed          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-const char	*GradeTooHighException::what( void ) const throw() {
+const char*	Bureaucrat::GradeTooHighException::what( void ) const throw() {
 	
 	return "Exception: Bureaucrat Grade is Too High!!";
 }
 
-const char	*GradeTooLowException::what( void ) const throw() {
+const char*	Bureaucrat::GradeTooLowException::what( void ) const throw() {
 	
 	return "Exception: Bureaucrat Grade is Too Low!!";
 }
@@ -27,20 +27,20 @@ Bureaucrat::Bureaucrat( void ) : _name( "Default" ), _grade( 150 ) {
 	return;
 }
 
-Bureaucrat::Bureaucrat( std::string const &name, int grade ) : _name( name ) {
+Bureaucrat::Bureaucrat( const std::string &name, int grade ) : _name( name ) {
 
 	if ( grade < 1 )
-		throw GradeTooHighException();
+		throw Bureaucrat::GradeTooHighException();
 
 	else if ( grade > 150 )
-		throw GradeTooLowException();
+		throw Bureaucrat::GradeTooLowException();
 
 	this->_grade = grade;
 
 	return;
 }
 
-Bureaucrat::Bureaucrat( Bureaucrat const &src ) : _name( src.getName() ), _grade( src.getGrade() ) {
+Bureaucrat::Bureaucrat( const Bureaucrat &src ) : _name( src._name ), _grade( src._grade ) {
 
 	return;
 }

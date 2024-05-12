@@ -6,7 +6,7 @@
 /*   By: alsaeed <alsaeed@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 20:51:56 by alsaeed           #+#    #+#             */
-/*   Updated: 2024/05/08 06:34:58 by alsaeed          ###   ########.fr       */
+/*   Updated: 2024/05/08 08:46:29 by alsaeed          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,20 +17,6 @@
 # include <stdexcept>
 # include <string>
 
-class GradeTooHighException : public std::exception {
-
-	public:
-	
-		const char	*what( void ) const throw();
-};
-
-class GradeTooLowException : public std::exception {
-
-	public:
-	
-		const char	*what( void ) const throw();
-};
-
 class Bureaucrat {
 	
 	private:
@@ -39,6 +25,20 @@ class Bureaucrat {
 		int					_grade;	
 
 	public:
+		
+		class GradeTooHighException : public std::exception {
+
+			public:
+
+				virtual const char	*what( void ) const throw();
+		};
+
+		class GradeTooLowException : public std::exception {
+
+			public:
+
+				virtual const char	*what( void ) const throw();
+		};
 
 		Bureaucrat( void );
 		Bureaucrat( const std::string &name, int grade );
