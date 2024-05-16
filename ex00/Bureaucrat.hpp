@@ -6,10 +6,11 @@
 /*   By: alsaeed <alsaeed@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 20:51:56 by alsaeed           #+#    #+#             */
-/*   Updated: 2024/05/08 08:46:29 by alsaeed          ###   ########.fr       */
+/*   Updated: 2024/05/12 17:28:14 by alsaeed          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
 #ifndef BUREAUCRAT_HPP
 # define BUREAUCRAT_HPP
 

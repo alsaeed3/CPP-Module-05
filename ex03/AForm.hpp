@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.hpp                                           :+:      :+:    :+:   */
+/*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alsaeed <alsaeed@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 06:13:50 by alsaeed           #+#    #+#             */
-/*   Updated: 2024/05/12 17:28:08 by alsaeed          ###   ########.fr       */
+/*   Updated: 2024/05/15 09:45:33 by alsaeed          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#ifndef FORM_HPP
-# define FORM_HPP
+#ifndef AFORM_HPP
+# define AFORM_HPP
 
 # include <iostream>
 # include <string>
@@ -20,7 +20,7 @@
 
 class Bureaucrat;
 
-class Form {
+class AForm {
 
 	private:
 
@@ -32,33 +32,49 @@ class Form {
 	public:
 
 		class GradeTooHighException : public std::exception {
-			
+
 			public:
 
-				const char	*what( void ) const throw();
+				virtual const char	*what( void ) const throw();
 		};
 
 		class GradeTooLowException : public std::exception {
-			
+
 			public:
 
-				const char	*what( void ) const throw();
+				virtual const char	*what( void ) const throw();
 		};
 
-		Form( void );
-		Form( std::string name, int signGrade, int execGrade );
-		Form( const Form &src );
-		Form	&operator=( const Form &rhs );
-		~Form( void );
+		class NotSignedException : public std::exception {
 
-		std::string	getName( void ) const;
-		bool		getSigned( void ) const;
-		int			getSignGrade( void ) const;
-		int			getExecGrade( void ) const;
+			public:
 
-		void		beSigned( const Bureaucrat &src );
+				virtual const char	*what( void ) const throw();
+		};
+
+		class FileNotOpenException : public std::exception {
+
+			public:
+
+				virtual const char	*what( void ) const throw();
+		};
+
+		AForm( void );
+		AForm( std::string name, int signGrade, int execGrade );
+		AForm( const AForm &src );
+		AForm			&operator=( const AForm &rhs );
+		virtual ~AForm( void );
+
+		std::string		getName( void ) const;
+		bool			getSigned( void ) const;
+		int				getSignGrade( void ) const;
+		int				getExecGrade( void ) const;
+
+		void			beSigned( const Bureaucrat &src );
+		
+		virtual void	execute( Bureaucrat const & executor ) const = 0;
 };
 
-std::ostream	&operator<<( std::ostream &os, const Form& rhs );
+std::ostream	&operator<<( std::ostream &os, const AForm& rhs );
 
-#endif
+#endif /* AFORM_HPP */

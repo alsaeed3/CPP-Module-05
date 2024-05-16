@@ -6,7 +6,7 @@
 /*   By: alsaeed <alsaeed@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 20:51:40 by alsaeed           #+#    #+#             */
-/*   Updated: 2024/05/15 21:08:51 by alsaeed          ###   ########.fr       */
+/*   Updated: 2024/05/16 16:35:21 by alsaeed          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,42 +15,22 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 
 
 
-int main(void)
-{
-	try
-	{
-		Bureaucrat	bureaucrat("Ali", 26);
-		std::cout << bureaucrat;
-		
-		// #=========== ShrubberyCreationForm =======#
-		// ShrubberyCreationForm	shrubbery("Home");
-		// std::cout << shrubbery;
+int main( void ) {
 
-		// bureaucrat.signForm(shrubbery);
-		// bureaucrat.executeForm(shrubbery);
+	try {
+		Intern someRandomIntern;
+		AForm	*rrf;
 
-		// #=========== RobotomyRequestForm =======#
-		// RobotomyRequestForm	robotomy("Robot");
-		// std::cout << robotomy;
-
-		// bureaucrat.signForm(robotomy);
-		// bureaucrat.executeForm(robotomy);
-
-
-		// #=========== PresidentialPardonForm =======#
-		PresidentialPardonForm	presidential("President");
-		std::cout << presidential;
-
-		bureaucrat.signForm(presidential);
-		bureaucrat.executeForm(presidential);
-		
-	}
-	catch(std::exception &e)
-	{
+		rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+		std::cout << *rrf << std::endl;
+		delete rrf;
+	} catch( std::exception &e ) {
 		std::cout << e.what() << std::endl;
 	}
-	return (0);
+
+	return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: alsaeed <alsaeed@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 06:13:57 by alsaeed           #+#    #+#             */
-/*   Updated: 2024/05/12 13:00:22 by alsaeed          ###   ########.fr       */
+/*   Updated: 2024/05/16 16:39:11 by alsaeed          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,8 +76,6 @@ int			Form::getExecGrade( void ) const {
 	return this->_execGrade;
 }
 
-/* A member function that will check the grade between bureaucrat and form objects */
-/* in case */
 void		Form::beSigned( const Bureaucrat &src ) {
 
 	if ( src.getGrade() < _signGrade )
@@ -88,11 +86,9 @@ void		Form::beSigned( const Bureaucrat &src ) {
 	return;
 }
 
-/* A non-member funtion to overload << after cout or any output stream functions */
-/* It will show the given statement in case cout received an object of the class in the parameter after << */
 std::ostream	&operator<<( std::ostream &os, const Form& rhs ) {
 
-	os << "Form name is: " << rhs.getName() << ", Form::_signed = " << rhs.getSigned() << ", Form::_signGrade = " << rhs.getSignGrade() << ", Form::_execGrade = " << rhs.getExecGrade() << std::endl;
+	os << "Form name is: " << rhs.getName() << ", Form::_signed: " << (rhs.getSigned() ? "true" : "false") << ", Form::_signGrade: " << rhs.getSignGrade() << ", Form::_execGrade: " << rhs.getExecGrade() << std::endl;
 
 	return os;
 }

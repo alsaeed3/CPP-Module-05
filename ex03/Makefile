@@ -6,7 +6,7 @@
 #    By: alsaeed <alsaeed@student.42abudhabi.ae>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/04 20:51:31 by alsaeed           #+#    #+#              #
-#    Updated: 2024/05/15 21:04:43 by alsaeed          ###   ########.fr        #
+#    Updated: 2024/05/16 16:29:44 by alsaeed          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,13 +17,13 @@ BOLD_GREEN 	= \033[1;32m
 BOLD_RED 	= \033[1;31m
 RESET 		= \033[0m
 
-NAME = aform
+NAME = intern
 
 CXX = c++
 
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 
-SRCS = Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp
+SRCS = Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp Intern.cpp
 
 OBJS_DIR = objs
 
@@ -37,20 +37,20 @@ all: $(NAME)
 
 $(NAME): $(OBJS) main.cpp
 	@$(CXX) $(CXXFLAGS) $(OBJS) main.cpp -o $@
-	@echo "AForm compiled: $(BOLD_GREEN)OK$(RESET)"
+	@echo "Intern compiled: $(BOLD_GREEN)OK$(RESET)"
 
-$(OBJS): Makefile main.cpp Bureaucrat.cpp Bureaucrat.hpp AForm.cpp AForm.hpp PresidentialPardonForm.cpp PresidentialPardonForm.hpp RobotomyRequestForm.cpp RobotomyRequestForm.hpp ShrubberyCreationForm.cpp ShrubberyCreationForm.hpp
+$(OBJS): Makefile main.cpp Bureaucrat.cpp Bureaucrat.hpp AForm.cpp AForm.hpp PresidentialPardonForm.cpp PresidentialPardonForm.hpp RobotomyRequestForm.cpp RobotomyRequestForm.hpp ShrubberyCreationForm.cpp ShrubberyCreationForm.hpp Intern.cpp Intern.hpp
 
 clean:
 	@if [ -e $(OBJS_DIR) ]; then \
 		rm -rf $(OBJS_DIR); \
-		echo "AForm clean: $(BOLD_RED)OK$(RESET)"; \
+		echo "Intern clean: $(BOLD_RED)OK$(RESET)"; \
 	fi
 
 fclean: clean
 	@if [ -e $(NAME) ]; then \
 		rm -rf $(NAME); \
-		echo "AForm full-clean: $(BOLD_RED)OK$(RESET)"; \
+		echo "Intern full-clean: $(BOLD_RED)OK$(RESET)"; \
 	fi
 
 re: fclean all
