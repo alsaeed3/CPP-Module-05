@@ -6,7 +6,7 @@
 /*   By: alsaeed <alsaeed@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 20:51:56 by alsaeed           #+#    #+#             */
-/*   Updated: 2024/05/12 17:28:14 by alsaeed          ###   ########.fr       */
+/*   Updated: 2024/05/28 14:12:15 by alsaeed          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,14 @@ class Bureaucrat {
 
 			public:
 
-				virtual const char	*what( void ) const throw();
+				const char	*what( void ) const throw();
 		};
 
 		class GradeTooLowException : public std::exception {
 
 			public:
 
-				virtual const char	*what( void ) const throw();
+				const char	*what( void ) const throw();
 		};
 
 		Bureaucrat( void );

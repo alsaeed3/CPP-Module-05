@@ -6,7 +6,7 @@
 /*   By: alsaeed <alsaeed@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 06:13:50 by alsaeed           #+#    #+#             */
-/*   Updated: 2024/05/15 09:45:33 by alsaeed          ###   ########.fr       */
+/*   Updated: 2024/05/28 14:14:38 by alsaeed          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,28 +35,28 @@ class AForm {
 
 			public:
 
-				virtual const char	*what( void ) const throw();
+				const char	*what( void ) const throw();
 		};
 
 		class GradeTooLowException : public std::exception {
 
 			public:
 
-				virtual const char	*what( void ) const throw();
+				const char	*what( void ) const throw();
 		};
 
 		class NotSignedException : public std::exception {
 
 			public:
 
-				virtual const char	*what( void ) const throw();
+				const char	*what( void ) const throw();
 		};
 
 		class FileNotOpenException : public std::exception {
 
 			public:
 
-				virtual const char	*what( void ) const throw();
+				const char	*what( void ) const throw();
 		};
 
 		AForm( void );
