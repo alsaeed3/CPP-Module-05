@@ -6,7 +6,7 @@
 /*   By: alsaeed <alsaeed@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 20:51:40 by alsaeed           #+#    #+#             */
-/*   Updated: 2024/05/16 16:47:26 by alsaeed          ###   ########.fr       */
+/*   Updated: 2024/05/28 17:27:28 by alsaeed          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int main(void)
 {
 	try
 	{
-		Bureaucrat	bureaucrat( "Ali", 26 );
+		Bureaucrat	bureaucrat( "Ali", 5 );
 		std::cout << bureaucrat;
 	
 		ShrubberyCreationForm	shrubbery( "Home" );

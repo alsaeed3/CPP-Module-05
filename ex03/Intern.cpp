@@ -6,7 +6,7 @@
 /*   By: alsaeed <alsaeed@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 21:17:42 by alsaeed           #+#    #+#             */
-/*   Updated: 2024/05/16 16:36:02 by alsaeed          ###   ########.fr       */
+/*   Updated: 2024/05/28 17:33:38 by alsaeed          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,10 +75,9 @@ AForm*		Intern::makeForm( std::string name, std::string target ) {
 			break;
 	}
 
-	if ( formNameIndex >= 3 ) {
-
+	if ( formNameIndex >= 3 )
 		throw UnkownFormNameException();
-	}
+
 	std::cout << "Intern creates " << name << " form" << std::endl;
 
 	return (this->*forms[ formNameIndex ])( target );	
