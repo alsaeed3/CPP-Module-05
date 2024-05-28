@@ -6,7 +6,7 @@
 /*   By: alsaeed <alsaeed@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 20:51:40 by alsaeed           #+#    #+#             */
-/*   Updated: 2024/05/28 17:09:10 by alsaeed          ###   ########.fr       */
+/*   Updated: 2024/05/28 19:51:29 by alsaeed          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,7 @@ int main(void) {
         std::cout << b1 << std::endl;
         b1.decrementGrade();
         std::cout << b1 << std::endl;
-    }
-	catch ( std::exception &e ) {
+    } catch ( std::exception &e ) {
 
         std::cerr << e.what() << std::endl;
     }
@@ -44,8 +43,7 @@ int main(void) {
         std::cout << b2 << std::endl;
         b2.incrementGrade();
         std::cout << b2 << std::endl;
-    }
-	catch ( std::exception &e ) {
+    } catch ( std::exception &e ) {
         std::cerr << e.what() << std::endl;
     }
 
@@ -61,8 +59,7 @@ int main(void) {
         std::cout << b3 << std::endl;
         b3.decrementGrade();
         std::cout << b3 << std::endl;
-    }
-	catch ( std::exception &e ) {
+    } catch ( std::exception &e ) {
         std::cerr << e.what() << std::endl;
     }
 

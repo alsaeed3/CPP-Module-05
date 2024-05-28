@@ -6,7 +6,7 @@
 /*   By: alsaeed <alsaeed@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/12 13:11:30 by alsaeed           #+#    #+#             */
-/*   Updated: 2024/05/15 12:11:18 by alsaeed          ###   ########.fr       */
+/*   Updated: 2024/05/28 19:52:38 by alsaeed          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	PresidentialPardonForm::execute( const Bureaucrat & executor ) const {
 		throw NotSignedException();
 	if ( executor.getGrade() > this->getExecGrade() )
 		throw GradeTooLowException();
-		
+	
 	std::cout << _target << " has been pardoned by Zaphod Beeblebrox." << std::endl;
 
 	return;
