@@ -1,0 +1,43 @@
+name: Compilation Check
+
+on:
+  push:
+    branches:
+      - '**'
+
+jobs:
+  build-linux:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Build all projects
+      run: |
+        for dir in ex*/; do
+          if [ -f "$dir/Makefile" ]; then
+            echo "Building in $dir"
+            (cd $dir && make)
+          else
+            echo "No Makefile found in $dir, skipping"
+          fi
+        done
+
+  build-Mac:
+    runs-on: macos-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Build all projects
+      run: |
+        for dir in ex*/; do
+          if [ -f "$dir/Makefile" ]; then
+            echo "Building in $dir"
+            (cd $dir && make)
+          else
+            echo "No Makefile found in $dir, skipping"
+          fi
+        done
