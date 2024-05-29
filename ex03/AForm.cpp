@@ -6,7 +6,7 @@
 /*   By: alsaeed <alsaeed@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 06:13:57 by alsaeed           #+#    #+#             */
-/*   Updated: 2024/05/28 19:38:41 by alsaeed          ###   ########.fr       */
+/*   Updated: 2024/05/28 20:26:43 by alsaeed          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,4 +101,12 @@ std::ostream	&operator<<( std::ostream &os, const AForm& rhs ) {
 	os << "AForm name is: " << rhs.getName() << ", AForm::_signed: " << (rhs.getSigned() ? "true" : "false") << ", AForm::_signGrade: " << rhs.getSignGrade() << ", AForm::_execGrade: " << rhs.getExecGrade() << std::endl;
 
 	return os;
+}
+
+void		AForm::execute( Bureaucrat const & executor ) const {
+
+	if ( !getSigned() )
+		throw NotSignedException();
+	if ( executor.getGrade() > getExecGrade() )
+		throw GradeTooLowException();
 }

@@ -6,7 +6,7 @@
 /*   By: alsaeed <alsaeed@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 20:51:40 by alsaeed           #+#    #+#             */
-/*   Updated: 2024/05/16 16:45:52 by alsaeed          ###   ########.fr       */
+/*   Updated: 2024/05/29 16:32:15 by alsaeed          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,20 +17,25 @@
 #include "PresidentialPardonForm.hpp"
 #include "Intern.hpp"
 
-
-
 int main( void ) {
 
+	AForm	*rrf;
+
 	try {
+
 		Intern someRandomIntern;
-		AForm	*rrf;
 
 		rrf = someRandomIntern.makeForm( "robotomy request", "Bender" );
 		std::cout << *rrf << std::endl;
-		delete rrf;
-	} catch( std::exception &e ) {
+	} catch( const std::exception &e ) {
+
 		std::cout << e.what() << std::endl;
 	}
+
+	Bureaucrat	bureaucrat( "Ali", 5 );
+	bureaucrat.signForm( *rrf );
+	bureaucrat.executeForm( *rrf );
+	delete rrf;
 
 	return 0;
 }
