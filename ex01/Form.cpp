@@ -6,7 +6,7 @@
 /*   By: alsaeed <alsaeed@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 06:13:57 by alsaeed           #+#    #+#             */
-/*   Updated: 2024/05/28 19:37:49 by alsaeed          ###   ########.fr       */
+/*   Updated: 2024/06/06 23:37:37 by alsaeed          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ int			Form::getExecGrade( void ) const {
 
 void		Form::beSigned( const Bureaucrat &src ) {
 
-	if ( src.getGrade() < _signGrade )
+	if ( src.getGrade() <= _signGrade )
 		_signed = true;
 	else
 		throw( Form::GradeTooLowException() );
